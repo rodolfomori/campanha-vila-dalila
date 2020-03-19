@@ -16,6 +16,7 @@ export const BackContainer = styled.div`
   margin-left: 20px;
   display: flex;
   align-items: center;
+  width: fit-content;
   p {
     margin: 0;
     margin-top: 10px;

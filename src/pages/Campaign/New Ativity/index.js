@@ -147,7 +147,7 @@ export default function NewAtivity() {
       setLoading(false);
     } finally {
       setTimeout(() => {
-        history.push('/campaign');
+        history.push('/');
         setLoading(false);
       }, 2900);
     }
@@ -157,10 +157,11 @@ export default function NewAtivity() {
     <>
       <Spinner loading={loading} />
 
-      <BackContainer>
+      <BackContainer onClick={() => history.push('/')}>
         <BackButton icon={faAngleDoubleLeft} />
         <p>Voltar</p>
       </BackContainer>
+
       <FormStyle onSubmit={handleSubmit}>
         <Container>
           <h1 style={{ textAlign: 'center', fontSize: '25px' }}>
@@ -200,6 +201,7 @@ export default function NewAtivity() {
               dateFormat="DD dd 'de' MM 'de' yy"
               showButtonBar
               showIcon
+              readOnlyInput
               style={{
                 padding: 0,
                 margin: 0,
