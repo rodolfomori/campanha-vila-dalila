@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import * as Yup from 'yup';
+import { faAngleDoubleLeft } from '@fortawesome/free-solid-svg-icons';
 import Spinner from '../../../components/Spinner';
 import history from '../../../services/history';
 import api from '../../../services/api';
@@ -12,6 +13,8 @@ import {
   TextStyle,
   InputStyleMask,
   CalendarStyle,
+  BackButton,
+  BackContainer,
 } from './styles';
 
 import pt from '../../../components/Calendar';
@@ -153,6 +156,11 @@ export default function NewAtivity() {
   return (
     <>
       <Spinner loading={loading} />
+
+      <BackContainer>
+        <BackButton icon={faAngleDoubleLeft} />
+        <p>Voltar</p>
+      </BackContainer>
       <FormStyle onSubmit={handleSubmit}>
         <Container>
           <h1 style={{ textAlign: 'center', fontSize: '25px' }}>
