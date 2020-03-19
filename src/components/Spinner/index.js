@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import HashLoader from 'react-spinners/HashLoader';
 
 import { Container } from './styles';
 
 export default function Spinner({ loading }) {
-  // const [enable, setEnable] = useState(false);
-  console.log(loading);
   return (
     <Container style={{ display: !loading && 'none' }}>
       <HashLoader
