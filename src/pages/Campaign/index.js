@@ -2,14 +2,15 @@ import React from 'react';
 
 import { Container, LinkPages } from './styles';
 
-import logoCampanha from '../../assets/logo-campanha.PDF';
+import logoCampanha from '../../assets/campanha-logo.png';
 
 export default function Campaign() {
   return (
     <>
       {/* <img src={logoCampanha} alt="" /> */}
       <Container>
-        <h1>Campanha Prédios e Condomínios</h1>
+        <img src={logoCampanha} alt="logo campanha" />
+        {/* <h1>Campanha Prédios e Condomínios</h1> */}
         <p>
           Esse formulário foi criado exclusivamente para registro de ocorrências
           do trabalho realizado nas modalidades da campanha de prédios e

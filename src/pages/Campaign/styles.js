@@ -44,6 +44,15 @@ export const Container = styled(Paper)`
     width: 95%;
     margin-bottom: 20px;ogo
   }
+
+  img{
+    width: 60%;
+    max-width: 450px;
+    min-width: 270px;
+  @media (max-width: 600px) {
+    width: 95%;
+  }
+  }
 `;
 
 export const LinkPages = styled(Link)`
