@@ -37,9 +37,9 @@ export default function Campaign() {
         <LinkPages style={{ backgroundColor: '#3CB371	' }} to="/new">
           Novo Registro de Atividade
         </LinkPages>
-        {/* <LinkPages style={{ backgroundColor: '#3b9eff' }} to="/view">
+        <LinkPages style={{ backgroundColor: '#3b9eff' }} to="/view">
           Ver Atividades Já realizadas
-        </LinkPages> */}
+        </LinkPages>
       </div>
     </>
   );

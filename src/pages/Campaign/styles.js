@@ -6,8 +6,9 @@ import { Paper } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 
 export const Container = styled(Paper)`
+  display: flex;
+  align-items: center;
   margin: auto;
-
   margin-top: 30px;
   display: flex;
   flex-direction: column;
