@@ -5,25 +5,6 @@ import Select from 'react-select';
 import { Paper, TextField } from '@material-ui/core';
 import { Calendar } from 'primereact/calendar';
 import TextInputMask from 'react-masked-text';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-export const BackButton = styled(FontAwesomeIcon)`
-  font-size: 30px;
-  margin: 10px 5px 0 5px;
-`;
-
-export const BackContainer = styled.div`
-  margin-left: 20px;
-  display: flex;
-  align-items: center;
-  width: fit-content;
-  p {
-    margin: 0;
-    margin-top: 10px;
-    font-weight: bold;
-    font-size: 20px;
-  }
-`;
 
 export const FormStyle = styled(Form)`
   display: flex;

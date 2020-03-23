@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import * as Yup from 'yup';
-import { faAngleDoubleLeft } from '@fortawesome/free-solid-svg-icons';
-import Spinner from '../../../components/Spinner';
-import history from '../../../services/history';
-import api from '../../../services/api';
+import Spinner from '../../components/Spinner';
+import history from '../../services/history';
+import api from '../../services/api';
+import Back from '../../components/BackButton';
+
 import {
   FormStyle,
   InputStyle,
@@ -13,13 +14,11 @@ import {
   TextStyle,
   InputStyleMask,
   CalendarStyle,
-  BackButton,
-  BackContainer,
 } from './styles';
 
-import pt from '../../../components/Calendar';
+import pt from '../../components/Calendar';
 
-export default function NewAtivity() {
+export default function NewActivity() {
   const [loading, setLoading] = useState(false);
 
   const [modalities, setModalities] = useState();
@@ -108,6 +107,7 @@ export default function NewAtivity() {
   });
 
   async function handleSubmit({ publishers, apartment, observations }) {
+    console.log(phone);
     setLoading(true);
     if (!selectMod || !selectBuilding) {
       setLoading(false);
@@ -121,7 +121,6 @@ export default function NewAtivity() {
     if (
       !(await schema.isValid({
         publishers,
-        phone,
         apartment,
         observations,
         modality_id,
@@ -140,6 +139,7 @@ export default function NewAtivity() {
         date,
         modality_id,
         apartment,
+        phone,
       });
       toast.success('Atividade Registrada com sucesso!');
     } catch (err) {
@@ -156,12 +156,7 @@ export default function NewAtivity() {
   return (
     <>
       <Spinner loading={loading} />
-
-      <BackContainer onClick={() => history.push('/')}>
-        <BackButton icon={faAngleDoubleLeft} />
-        <p>Voltar</p>
-      </BackContainer>
-
+      <Back path="/" />
       <FormStyle onSubmit={handleSubmit}>
         <Container>
           <h1 style={{ textAlign: 'center', fontSize: '25px' }}>
