@@ -63,7 +63,7 @@ export default function NewActivity() {
     { number: 37 },
     { number: 38 },
   ];
-  const [selectTerr, setSelectTerr] = useState('');
+  const [selectTerr, setSelectTerr] = useState(null);
 
   const [buildings, setBuildings] = useState();
   const [selectBuilding, setSelectBuilding] = useState();
@@ -95,7 +95,7 @@ export default function NewActivity() {
         // toast.error('Esse território não possui condomínios cadastrados!');
       }
     }
-    getDataBuilding();
+    selectTerr && getDataBuilding();
   }, [selectTerr]);
 
   const schema = Yup.object().shape({
