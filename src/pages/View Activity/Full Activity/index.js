@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Container } from './styles';
 import Back from '../../../components/BackButton';
+import { Container } from './styles';
 
 export default function FullActivity(props) {
   const { activity } = props.location;

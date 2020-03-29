@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import * as Yup from 'yup';
-import Spinner from '../../components/Spinner';
-import history from '../../services/history';
-import api from '../../services/api';
-import Back from '../../components/BackButton';
 
+import Back from '../../components/BackButton';
+import pt from '../../components/Calendar';
+import Spinner from '../../components/Spinner';
+import api from '../../services/api';
+import history from '../../services/history';
+import territories from '../../utils/territories';
 import {
   FormStyle,
   InputStyle,
@@ -16,53 +18,12 @@ import {
   CalendarStyle,
 } from './styles';
 
-import pt from '../../components/Calendar';
-
 export default function NewActivity() {
   const [loading, setLoading] = useState(false);
 
   const [modalities, setModalities] = useState();
   const [selectMod, setSelectMod] = useState();
 
-  const territories = [
-    { number: 1 },
-    { number: 2 },
-    { number: 3 },
-    { number: 4 },
-    { number: 6 },
-    { number: 7 },
-    { number: 8 },
-    { number: 9 },
-    { number: 10 },
-    { number: 11 },
-    { number: 12 },
-    { number: 13 },
-    { number: 14 },
-    { number: 15 },
-    { number: 16 },
-    { number: 17 },
-    { number: 18 },
-    { number: 19 },
-    { number: 20 },
-    { number: 21 },
-    { number: 22 },
-    { number: 23 },
-    { number: 25 },
-    { number: 25 },
-    { number: 26 },
-    { number: 27 },
-    { number: 28 },
-    { number: 29 },
-    { number: 30 },
-    { number: 31 },
-    { number: 32 },
-    { number: 33 },
-    { number: 34 },
-    { number: 35 },
-    { number: 36 },
-    { number: 37 },
-    { number: 38 },
-  ];
   const [selectTerr, setSelectTerr] = useState(null);
 
   const [buildings, setBuildings] = useState();
@@ -107,7 +68,6 @@ export default function NewActivity() {
   });
 
   async function handleSubmit({ publishers, apartment, observations }) {
-    console.log(phone);
     setLoading(true);
     if (!selectMod || !selectBuilding) {
       setLoading(false);

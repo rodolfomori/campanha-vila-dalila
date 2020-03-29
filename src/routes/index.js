@@ -5,7 +5,6 @@ import Home from '../pages/Home';
 import NewActivity from '../pages/New Activity';
 import ViewActivity from '../pages/View Activity';
 import FullActivity from '../pages/View Activity/Full Activity';
-
 import Route from './Route';
 
 export default function Routes() {

@@ -1,11 +1,7 @@
-import styled from 'styled-components';
-import { Dropdown } from 'react-bootstrap';
-import { FaBars, FaChevronCircleLeft } from 'react-icons/fa';
-import CheeseburgerMenu from 'cheeseburger-menu';
-import { Link } from 'react-router-dom';
-import MenuIcon from '@material-ui/icons/Menu';
-import MenuOpenIcon from '@material-ui/icons/MenuOpen';
 import { Paper } from '@material-ui/core';
+import MenuOpenIcon from '@material-ui/icons/MenuOpen';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 export const Container = styled.div`
   height: 100%;

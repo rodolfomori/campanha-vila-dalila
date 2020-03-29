@@ -1,37 +1,27 @@
-import React, { useState, useEffect } from 'react';
-import { toast } from 'react-toastify';
-import { Link } from 'react-router-dom';
+import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 import { parseISO, format } from 'date-fns';
 import pt from 'date-fns/locale/pt';
-import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
-import Spinner from '../../components/Spinner';
-import api from '../../services/api';
-import Back from '../../components/BackButton';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
+import Back from '../../components/BackButton';
+import SearchActivities from '../../components/SearchActivities';
 import { Container, Wrapper, CalendarIcon } from './styles';
 
 export default function ViewActivity() {
   const [activities, setActivities] = useState();
 
-  useEffect(() => {
-    async function getData() {
-      try {
-        const response = await api.get(`activities`);
-        setActivities(response.data);
-      } catch (err) {
-        console.log(err);
-      }
-    }
-    getData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-  console.log(activities);
+  function activitiesData(data) {
+    console.log(data);
+    data && setActivities(data);
+  }
 
   return (
     <>
       <Back path="/" />
-      <Wrapper>
-        {activities &&
+      <SearchActivities activitiesData={activitiesData} />
+      <Wrapper act={activities}>
+        {activities ? (
           activities.map(act => (
             <Link
               to={{
@@ -76,7 +66,10 @@ export default function ViewActivity() {
                 </p>
               </Container>
             </Link>
-          ))}
+          ))
+        ) : (
+          <p>Nenhum Resultado Encontrado</p>
+        )}
       </Wrapper>
     </>
   );

@@ -2,24 +2,17 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+import { signOut } from '../../store/modules/auth/actions';
+import Menu from '../Menu';
 import {
   Container,
   Content,
   Profile,
-  Button,
   IconBarOpen,
   Home,
   IconBar,
-  IconBack,
-  LinkStyle,
   AsideMenu,
-  TopMenu,
 } from './styles';
-
-import Menu from '../Menu';
-
-import logo from '../../assets/vila-dalila-logo.svg';
-import { signOut } from '../../store/modules/auth/actions';
 
 export default function Header() {
   const admin = useSelector(state => state.user.profile.admin);

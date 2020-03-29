@@ -1,21 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import { faDoorOpen } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-import { faDoorOpen } from '@fortawesome/free-solid-svg-icons';
-import { Container, LinkStyle, TopMenu, IconBack } from './styles';
 
 import logo from '../../assets/vila-dalila-logo.svg';
 import { signOut } from '../../store/modules/auth/actions';
 import data from './nav';
+import { Container, LinkStyle, TopMenu, IconBack } from './styles';
 
 export default function Menu({ onClicked = () => {} }) {
   const admin = useSelector(state => state.user.profile.admin);
   const dispatch = useDispatch();
 
-  const { profile } = useSelector(state => state.user);
+  // const { profile } = useSelector(state => state.user);
 
   function handleSignOut() {
     onClicked(false);

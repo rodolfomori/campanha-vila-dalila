@@ -1,10 +1,10 @@
-import styled from 'styled-components';
-import { darken } from 'polished';
-import { Form, Input, Check } from '@rocketseat/unform';
-import Select from 'react-select';
 import { Paper, TextField } from '@material-ui/core';
+import { Form, Input, Check } from '@rocketseat/unform';
+import { darken } from 'polished';
 import { Calendar } from 'primereact/calendar';
 import TextInputMask from 'react-masked-text';
+import Select from 'react-select';
+import styled from 'styled-components';
 
 export const FormStyle = styled(Form)`
   display: flex;

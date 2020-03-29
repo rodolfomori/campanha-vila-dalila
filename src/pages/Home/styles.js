@@ -1,9 +1,6 @@
-import styled from 'styled-components';
-import { darken } from 'polished';
-import { Form, Input, Check } from '@rocketseat/unform';
-import Select from 'react-select';
 import { Paper } from '@material-ui/core';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 export const Container = styled(Paper)`
   display: flex;

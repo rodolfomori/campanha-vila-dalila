@@ -1,8 +1,7 @@
 import React from 'react';
 
-import { Container, LinkPages } from './styles';
-
 import logoCampanha from '../../assets/campanha-logo.png';
+import { Container, LinkPages } from './styles';
 
 export default function Campaign() {
   return (
