@@ -23,48 +23,49 @@ export default function ViewActivity() {
       <Wrapper act={activities && activities.length > 0 && true}>
         {activities && activities.length > 0 ? (
           activities.map(act => (
-            <Link
-              to={{
-                pathname: '/full-activity',
-                activity: act,
-              }}
-            >
-              <Container key={act.id}>
-                <p style={{ fontWeight: 'bold' }}>
-                  <CalendarIcon icon={faCalendarAlt} />
-                  {format(parseISO(act.date), "dd 'de' MMMM 'de' yyyy", {
-                    locale: pt,
-                  })}
-                </p>
+            // <Link
+            //   style={{ textDecoration: 'none' }}
+            //   to={{
+            //     pathname: '/full-activity',
+            //     activity: act,
+            //   }}
+            // >
+            <Container key={act.id}>
+              <p style={{ fontWeight: 'bold' }}>
+                <CalendarIcon icon={faCalendarAlt} />
+                {format(parseISO(act.date), "dd 'de' MMMM 'de' yyyy", {
+                  locale: pt,
+                })}
+              </p>
+              <p>
+                <strong>Modalidade</strong>:{act.modality.nickname}
+              </p>
+              <p>
+                <strong>Publicador</strong>:{act.publishers}
+              </p>
+              <p>
+                <strong>Território n°</strong>: {act.building.territory}
+              </p>
+              <p>
+                <strong>Condomínio</strong>:{act.building.name}
+              </p>
+              <p>
+                <strong>Endereço</strong>:{act.building.address}
+              </p>
+              <p>
+                <strong>Apto/Casa</strong>:{act.apartment}
+              </p>
+              {act.phone && (
                 <p>
-                  <strong>Modalidade</strong>:{act.modality.nickname}
+                  <strong>Telefone</strong>:{act.phone}
                 </p>
-                <p>
-                  <strong>Publicador</strong>:{act.publishers}
-                </p>
-                <p>
-                  <strong>Território n°</strong>: {act.building.territory}
-                </p>
-                <p>
-                  <strong>Condomínio</strong>:{act.building.name}
-                </p>
-                <p>
-                  <strong>Endereço</strong>:{act.building.address}
-                </p>
-                <p>
-                  <strong>Apto/Casa</strong>:{act.apartment}
-                </p>
-                {act.phone && (
-                  <p>
-                    <strong>Telefone</strong>:{act.phone}
-                  </p>
-                )}
+              )}
 
-                <p>
-                  <strong>Observações</strong>:{act.observations}
-                </p>
-              </Container>
-            </Link>
+              <p>
+                <strong>Observações</strong>:{act.observations}
+              </p>
+            </Container>
+            // </Link>
           ))
         ) : (
           <p>Nenhum Resultado Encontrado</p>

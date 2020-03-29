@@ -6,7 +6,8 @@ import styled, { css } from 'styled-components';
 export const Wrapper = styled.div`
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: '1fr';
+  /* grid-template-columns: '1fr'; */
+  grid-template-columns: 1fr 1fr;
   justify-content: center;
   margin: 5px 10px;
 
@@ -28,18 +29,6 @@ export const CalendarIcon = styled(FontAwesomeIcon)`
 
 export const Container = styled(Paper)`
   padding: 5px;
-`;
-
-export const WrapperButtons = styled.div`
-  display: flex;
-  justify-content: space-around;
-  margin: 20px 5px;
-  button {
-    padding: 5px;
-    background-color: white;
-    border-radius: 5px;
-    width: 25%;
-  }
 `;
 
 export const Search = styled.div`
