@@ -59,9 +59,3 @@ export const Search = styled.div`
     height: 34px;
   }
 `;
-
-export const SelectStyle = styled(Select)`
-  color: black;
-  cursor: pointer !important;
-  width: 100%;
-`;

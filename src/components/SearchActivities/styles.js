@@ -16,6 +16,7 @@ export const Wrapper = styled.div`
       p {
         font-size: 20px;
         text-align: center;
+        max-width: 350px;
       }
     `}
 `;
@@ -70,5 +71,5 @@ export const SelectStyle = styled(Select)`
   cursor: pointer !important;
   width: 95%;
   margin: 10px;
-  max-width: 300px;
+  max-width: 350px;
 `;
