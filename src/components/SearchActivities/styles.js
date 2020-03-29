@@ -4,16 +4,11 @@ import Select from 'react-select';
 import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div`
-  /* display: grid;
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
-  margin: 5px; */
-  display: grid; /* 1 */
-  grid-gap: 10px; /* 3 */
+  display: grid;
+  grid-gap: 10px;
   grid-template-columns: ${props => (props.act ? 'repeat(2, 47%)' : '1fr')};
   justify-content: start;
   margin-left: 10px;
-  /* grid-auto-rows: minmax(10px, auto); */
 
   ${props =>
     (!props.act || props.act.length === 0) &&
@@ -23,6 +18,12 @@ export const Wrapper = styled.div`
         text-align: center;
       }
     `}
+`;
+
+export const WrapperSelect = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const CalendarIcon = styled(FontAwesomeIcon)`
@@ -67,6 +68,7 @@ export const Search = styled.div`
 export const SelectStyle = styled(Select)`
   color: black;
   cursor: pointer !important;
-  width: 100%;
-  padding: 10px;
+  width: 95%;
+  margin: 10px;
+  max-width: 300px;
 `;

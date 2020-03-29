@@ -26,7 +26,6 @@ export default function ViewActivity() {
             <Link
               to={{
                 pathname: '/full-activity',
-
                 activity: act,
               }}
             >

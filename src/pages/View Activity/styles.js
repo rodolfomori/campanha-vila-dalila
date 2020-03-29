@@ -4,15 +4,11 @@ import Select from 'react-select';
 import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div`
-  /* display: grid;
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
-  margin: 5px; */
-  display: grid; /* 1 */
-  grid-gap: 10px; /* 3 */
+  display: grid;
+  grid-gap: 10px;
   grid-template-columns: '1fr';
   justify-content: center;
-  margin: 5px 10px; /* grid-auto-rows: minmax(10px, auto); */
+  margin: 5px 10px;
 
   ${props =>
     !props.act &&
@@ -20,6 +16,7 @@ export const Wrapper = styled.div`
       p {
         font-size: 20px;
         text-align: center;
+        max-width: 350px;
       }
     `}
 `;

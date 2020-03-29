@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import api from '../../services/api';
 import territories from '../../utils/territories';
-import { WrapperButtons, Search, SelectStyle } from './styles';
+import { WrapperButtons, Search, SelectStyle, WrapperSelect } from './styles';
 
 export default function SearchActivities(props) {
   const { activitiesData } = props;
@@ -135,7 +135,7 @@ export default function SearchActivities(props) {
       )}
 
       {showSearch === 'territories' && (
-        <>
+        <WrapperSelect>
           {modalities && (
             <SelectStyle
               placeholder="Modalidade..."
@@ -177,7 +177,7 @@ export default function SearchActivities(props) {
               Escolha o número do território antes de escolher o condomínio.
             </p>
           )}
-        </>
+        </WrapperSelect>
       )}
     </>
   );
