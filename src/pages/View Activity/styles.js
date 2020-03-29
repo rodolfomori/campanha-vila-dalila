@@ -10,10 +10,9 @@ export const Wrapper = styled.div`
   margin: 5px; */
   display: grid; /* 1 */
   grid-gap: 10px; /* 3 */
-  grid-template-columns: ${props => (props.act ? 'repeat(2, 47%)' : '1fr')};
-  justify-content: start;
-  margin-left: 10px;
-  /* grid-auto-rows: minmax(10px, auto); */
+  grid-template-columns: '1fr';
+  justify-content: center;
+  margin: 5px 10px; /* grid-auto-rows: minmax(10px, auto); */
 
   ${props =>
     !props.act &&

@@ -20,8 +20,8 @@ export default function ViewActivity() {
     <>
       <Back path="/" />
       <SearchActivities activitiesData={activitiesData} />
-      <Wrapper act={activities}>
-        {activities ? (
+      <Wrapper act={activities && activities.length > 0 && true}>
+        {activities && activities.length > 0 ? (
           activities.map(act => (
             <Link
               to={{

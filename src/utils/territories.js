@@ -1,5 +1,5 @@
 const territories = [
-  { number: 'Não selecionar um Território' },
+  { number: 'Todos' },
   { number: 1 },
   { number: 2 },
   { number: 3 },

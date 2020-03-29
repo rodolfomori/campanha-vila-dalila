@@ -16,7 +16,7 @@ export const Wrapper = styled.div`
   /* grid-auto-rows: minmax(10px, auto); */
 
   ${props =>
-    !props.act &&
+    (!props.act || props.act.length === 0) &&
     css`
       p {
         font-size: 20px;
@@ -68,4 +68,5 @@ export const SelectStyle = styled(Select)`
   color: black;
   cursor: pointer !important;
   width: 100%;
+  padding: 10px;
 `;
