@@ -102,14 +102,13 @@ export default function NewActivity() {
         phone,
       });
       toast.success('Atividade Registrada com sucesso!');
-    } catch (err) {
-      toast.error('Erro no Servido, Tente Novamente!');
-      setLoading(false);
-    } finally {
       setTimeout(() => {
         history.push('/');
         setLoading(false);
       }, 2900);
+    } catch (err) {
+      toast.error('Falha ao enviar os dados para o Servidor, Tente Novamente!');
+      setLoading(false);
     }
   }
 

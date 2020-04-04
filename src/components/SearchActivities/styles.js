@@ -2,6 +2,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Paper } from '@material-ui/core';
 import Select from 'react-select';
 import styled, { css } from 'styled-components';
+import { darken } from 'polished';
+import TextInputMask from 'react-masked-text';
 
 export const Wrapper = styled.div`
   display: grid;
@@ -50,20 +52,35 @@ export const WrapperButtons = styled.div`
 
 export const Search = styled.div`
   display: flex;
-  margin: 7px;
   align-items: center;
+  justify-content: center;
+  margin: 10px;
+  margin-top: 30px;
   input {
-    width: 80%;
+    min-height: 38px;
+    max-width: 313px;
+    width: 88%;
+    border-radius: 3px;
+    border: 1px solid #ccc;
     padding: 7px;
-    margin: 7px;
-    border-radius: 5px;
   }
   button {
-    background-color: red;
-    padding: 7px;
-    border-radius: 5px;
-    height: 34px;
+    border: 1px solid #3b9eff;
+    padding: 9px;
+    border-radius: 3px;
+    background: #3b9eff;
+
+    &:hover {
+      background: ${darken(0.03, '#3b9eff')};
+    }
+
+    &:active {
+      background: ${darken(0.03, '#3b9eff')};
+    }
   }
+`;
+export const SearchIcon = styled(FontAwesomeIcon)`
+  color: white;
 `;
 
 export const SelectStyle = styled(Select)`
@@ -72,4 +89,20 @@ export const SelectStyle = styled(Select)`
   width: 95%;
   margin: 10px;
   max-width: 350px;
+`;
+
+export const InputStyleMask = styled(TextInputMask)`
+  /* @media (max-width: 600px) {
+    width: 90%;
+  } */
+  min-height: 38px;
+    max-width: 313px;
+    width: 88%;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    padding: 7px;
+  color: rgba(0, 0, 0);
+  &::placeholder {
+    color: #999;
+  }
 `;

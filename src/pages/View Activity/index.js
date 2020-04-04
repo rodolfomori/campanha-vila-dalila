@@ -3,6 +3,7 @@ import { parseISO, format } from 'date-fns';
 import pt from 'date-fns/locale/pt';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Spinner from '../../components/Spinner';
 
 import Back from '../../components/BackButton';
 import SearchActivities from '../../components/SearchActivities';
@@ -21,7 +22,8 @@ export default function ViewActivity() {
       <Back path="/" />
       <SearchActivities activitiesData={activitiesData} />
       <Wrapper act={activities && activities.length > 0 && true}>
-        {activities && activities.length > 0 ? (
+        {activities &&
+          activities.length > 0 &&
           activities.map(act => (
             // <Link
             //   style={{ textDecoration: 'none' }}
@@ -66,11 +68,13 @@ export default function ViewActivity() {
               </p>
             </Container>
             // </Link>
-          ))
-        ) : (
-          <p>Nenhum Resultado Encontrado</p>
-        )}
+          ))}
       </Wrapper>
+      {!activities &&
+      <p style={{ textAlign: 'center', fontSize: '20px', fontWeight: 'bold' }}>
+        Nenhum Resultado Encontrado
+      </p>
+}
     </>
   );
 }

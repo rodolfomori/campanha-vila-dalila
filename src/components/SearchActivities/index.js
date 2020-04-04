@@ -1,11 +1,24 @@
 import React, { useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
 
 import api from '../../services/api';
 import territories from '../../utils/territories';
-import { WrapperButtons, Search, SelectStyle, WrapperSelect } from './styles';
+import {
+  WrapperButtons,
+  Search,
+  SelectStyle,
+  WrapperSelect,
+  SearchIcon,
+  InputStyleMask,
+} from './styles';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import Spinner from '../../components/Spinner';
 
 export default function SearchActivities(props) {
   const { activitiesData } = props;
+
+  const [loading, setLoading] = useState(false);
+
   const [activities, setActivities] = useState();
   const [showSearch, setShowSearch] = useState('territories');
 
@@ -17,27 +30,35 @@ export default function SearchActivities(props) {
   const [modalities, setModalities] = useState();
   const [selectMod, setSelectMod] = useState();
 
-  // function typeButton(type) {
-  //   setShowSearch(type);
-  // }
+  const [phone, setPhone] = useState(null);
 
   useEffect(() => {
     activities && activitiesData(activities);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activities]);
 
-  // useEffect(() => {
-  //   async function getData() {
-  //     try {
-  //       const response = await api.get(`activities`);
-  //       setActivities(response.data);
-  //     } catch (err) {
-  //       console.log(err);
-  //     }
-  //   }
-  //   getData();
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, []);
+  const handleSearchPhone = async () => {
+    setLoading(true);
+    try {
+      const response = await api.post(`search-phone`, { phone });
+      if (response.data.length > 0) {
+        setBuildings(null);
+        setSelectBuilding(null);
+        setSelectTerr(null);
+        setSelectMod(null);
+        setPhone(null);
+        setTimeout(() => {
+          setActivities(response.data);
+        }, 500);
+      } else {
+        toast.error('Nenhum registro encontrado com esse número de telefone!');
+      }
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
     async function getData() {
@@ -98,41 +119,20 @@ export default function SearchActivities(props) {
     selectTerr && getDataBuilding();
   }, [selectTerr]);
 
-  // useEffect(() => {
-  //   async function getDataBuilding() {
-  //     try {
-  //       const building_id = selectBuilding.id;
-  //       const response = await api.get(`search-activity`, { building_id });
-  //       setActivities(response.data);
-  //     } catch (err) {
-  //       console.log(err);
-  //       // toast.error('Esse território não possui condomínios cadastrados!');
-  //     }
-  //   }
-  //   selectBuilding && getDataBuilding();
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [selectBuilding]);
-
   return (
     <>
-      {/* <WrapperButtons>
-        <button type="button" onClick={() => typeButton('territories')}>
-          Território ou Condomínio
+      <Spinner loading={loading} />
+      <Search>
+        <InputStyleMask
+          kind="cel-phone"
+          value={phone}
+          placeholder="Telefone ou Celular com DDD"
+          onChangeText={text => setPhone(text)}
+        />{' '}
+        <button onClick={handleSearchPhone} type="button">
+          <SearchIcon icon={faSearch} />
         </button>
-        <button type="button" onClick={() => typeButton('search')}>
-          Busca Geral
-        </button>
-        <button type="button" onClick={() => typeButton('modality')}>
-          Modalidade
-        </button>
-      </WrapperButtons> */}
-
-      {showSearch === 'search' && (
-        <Search>
-          <input placeholder="Pesquise por uma atividade" />
-          <button type="button">Pesquisar</button>
-        </Search>
-      )}
+      </Search>
 
       {showSearch === 'territories' && (
         <WrapperSelect>

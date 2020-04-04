@@ -47,7 +47,6 @@ module.exports = {
     'import-helpers/order-imports': [
       'warn',
       {
-        // example configuration
         newlinesBetween: 'always',
         groups: [
           '/ˆreact/',

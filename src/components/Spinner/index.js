@@ -1,14 +1,14 @@
 import React from 'react';
-import HashLoader from 'react-spinners/HashLoader';
+import PacmanLoader from 'react-spinners/PacmanLoader';
 
 import { Container } from './styles';
 
 export default function Spinner({ loading }) {
   return (
     <Container style={{ display: !loading && 'none' }}>
-      <HashLoader
+      <PacmanLoader
         size={100}
-        css={{ position: 'fixed', top: '50%', left: '40%', zIndex: 9999 }}
+        css={{ position: 'fixed', top: '25%', left: '25%', zIndex: 9999}}
         color="#3d4977"
         loading={loading}
       />
