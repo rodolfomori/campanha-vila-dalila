@@ -1,19 +1,20 @@
 
 <h1 align="center">
-Buildings and Condominiums Campaign:office:</h1>
-<h3> 
+Buildings and Condominiums Campaign:office:
+</h1>
+
+<h3 align="center">   
   
-  [link](https://campanha.viladalila.site)
+  [view the project on air](https://campanha.viladalila.site)
   
 This application was developed and is maintained on a voluntary basis to assist in activities
 of the voluntary teaching campaign in buildings and condominiums.
 </h3>
 
-<h4>
-The project server is hosted at [Digital Ocean](https://www.digitalocean.com/)
+
+The project server is hosted at [Digital Ocean](https://www.digitalocean.com)
 
 Front End hosted at [Netilify](https://www.netlify.com/)
-</h4>
 
   
   [API!](https://github.com/dolfomori/api-dalila-congregation)
