@@ -7,12 +7,14 @@ Buildings and Condominiums Campaign:office:</h1>
   
 This application was developed and is maintained on a voluntary basis to assist in activities
 of the voluntary teaching campaign in buildings and condominiums.
+</h3>
 
-The project server is hosted at[Digital Ocean](https://www.digitalocean.com/)
+<h4>
+The project server is hosted at [Digital Ocean](https://www.digitalocean.com/)
 
 Front End hosted at [Netilify](https://www.netlify.com/)
+</h4>
 
-</h3>
   
   [API!](https://github.com/dolfomori/api-dalila-congregation)
 
